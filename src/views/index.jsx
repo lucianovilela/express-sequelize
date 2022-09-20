@@ -1,30 +1,13 @@
 import * as React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Template from "./template";
+import Typography from "@mui/material/Typography";
 
-const Root = () => <div>Root</div>;
+import Login from "./login";
 
-const Team = () => <div>Team</div>;
-
-
-
-export default function () {
-
-      const router = createBrowserRouter([
-        {
-          path: "/",
-          element: <Root />,
-          children: [
-            {
-              path: "team",
-              element: <Team />
-            }
-          ]
-        }
-      ]);
-
-  return <RouterProvider router={router} />;
-  //return <div>Funcionou</div>;
-
+export default function (props) {
+  return (
+    <Template>
+      <Login />
+    </Template>
+  );
 }
-
-export { Root, Team };
