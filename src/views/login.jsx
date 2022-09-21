@@ -32,7 +32,6 @@ function Copyright(props) {
 
 export default function SignUp() {
   const handleSubmit = (event) => {
-    console.log("aqui");
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
