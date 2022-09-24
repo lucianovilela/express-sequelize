@@ -9,6 +9,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
+import { Link } from 'react-router-dom';
 
 const theme = createTheme();
 const Bar = () => (
@@ -24,11 +25,12 @@ const Bar = () => (
         <MenuIcon />
       </IconButton>
       <Typography
-        variant="h6"
         component="div"
         sx={{ flexGrow: 1 }}
-      ></Typography>
-      <Button color="inherit">Login</Button>
+      >
+
+        <Link to="/login">Login</Link>
+      </Typography>
     </Toolbar>
   </AppBar>
 );
