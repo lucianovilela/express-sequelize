@@ -9,9 +9,24 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import { Link } from 'react-router-dom';
+import Link from "@mui/material/Link";
 
-const theme = createTheme();
+const theme = createTheme({
+  palette: {
+    primary: {
+      light: '#757ce8',
+      main: '#3f50b5',
+      dark: '#002884',
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: '#ff7961',
+      main: '#f44336',
+      dark: '#ba000d',
+      contrastText: '#000',
+    },
+  },
+});
 const Bar = () => (
   <AppBar position="static">
     <Toolbar>
@@ -24,29 +39,28 @@ const Bar = () => (
       >
         <MenuIcon />
       </IconButton>
-      <Typography
-        component="div"
-        sx={{ flexGrow: 1 }}
-      >
 
-        <Link to="/login">Login</Link>
-      </Typography>
+      <nav>
+      </nav>
+      <Button href="/login" color="inherit"  sx={{ my: 1, mx: 1.5 }}>
+        Login
+      </Button>
+      <Link href="/signup" color="inherit" variant="contained">SignUp</Link>
     </Toolbar>
   </AppBar>
 );
 
 export default function (props) {
   return (
-    <ThemeProvider theme={theme}>
-      <Bar />
-      <Container component="main">
-        <CssBaseline />
-        <Box>
-          <Box>
-            <Box>{props.children}</Box>
-          </Box>
-        </Box>
-      </Container>
-    </ThemeProvider>
+    <React.StrictMode>
+
+      <ThemeProvider theme={theme}>
+        <Bar />
+        <Container component="main">
+          <CssBaseline />
+          <Box>{props.children}</Box>
+        </Container>
+      </ThemeProvider>
+    </React.StrictMode>
   );
 }

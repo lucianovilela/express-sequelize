@@ -8,6 +8,7 @@ import {
   Link
 } from "react-router-dom";
 import Login from "./login";
+import SignUp from "./signup";
 const Home=()=><div></div>;
 export default function (props) {
   return (
@@ -17,6 +18,7 @@ export default function (props) {
         <Routes>
           <Route exact path="/" element={<Home />}/>
           <Route exact path="/login" element={<Login />}/>
+          <Route exact path="/signup" element={<SignUp />}/>
           
           
         </Routes>

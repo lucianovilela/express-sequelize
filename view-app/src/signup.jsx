@@ -30,6 +30,7 @@ function Copyright(props) {
 
 export default function SignUp() {
   const handleSubmit = (event) => {
+    console.log("aqui");
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
@@ -58,7 +59,7 @@ export default function SignUp() {
         <LockOutlinedIcon />
       </Avatar>
       <Typography component="h1" variant="h5">
-        Login
+        Sign up
       </Typography>
       <Box
 
@@ -68,7 +69,28 @@ export default function SignUp() {
         onSubmit={() => alert("1223")}
       >
         <Grid container spacing={2}>
-          
+          <Grid item xs={12} sm={6}>
+            <TextField
+
+              autoComplete="given-name"
+              name="firstName"
+              required
+              fullWidth
+              id="firstName"
+              label="First Name"
+              autoFocus
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              required
+              fullWidth
+              id="lastName"
+              label="Last Name"
+              name="lastName"
+              autoComplete="family-name"
+            />
+          </Grid>
           <Grid item xs={12}>
             <TextField
               required
@@ -104,12 +126,12 @@ export default function SignUp() {
           sx={{ mt: 3, mb: 2 }}
           onClick={handleSubmit}
         >
-          Login
+          Sign Up
         </Button>
         <Grid container justifyContent="flex-end">
           <Grid item>
-            <Link href="/signup" variant="body2">
-              Haven't an account? Sign Out
+            <Link href="#" variant="body2">
+              Already have an account? Sign in
             </Link>
           </Grid>
         </Grid>
